@@ -70,7 +70,7 @@ const ZustandCounter = () => {
         />
 
         <Button.Group>
-          <Button color="teal" onClick={() => increment()}>
+          <Button color="cyan" onClick={() => increment()}>
             +
           </Button>
           <Button
@@ -79,7 +79,7 @@ const ZustandCounter = () => {
           >
             count with custom value
           </Button>
-          <Button color="teal" onClick={() => decrement()}>
+          <Button color="cyan" onClick={() => decrement()}>
             -
           </Button>
         </Button.Group>
@@ -90,7 +90,6 @@ const ZustandCounter = () => {
 
 const ReduxCounter = () => {
   const [customValue, setCustomValue] = useState(0);
-
   const dispatch = useCounterDispatch();
 
   const handleIncrement = () => {
@@ -116,13 +115,19 @@ const ReduxCounter = () => {
         />
 
         <Button.Group>
-          <Button color="#ba8fff" onClick={handleIncrement}>
+          <Button
+            onClick={handleIncrement}
+            style={{ backgroundColor: "#ba8fff" }}
+          >
             +
           </Button>
           <Button variant="default" onClick={handleIncrementByuCustomValue}>
             count with custom value
           </Button>
-          <Button color="#ba8fff" onClick={handleDecrement}>
+          <Button
+            onClick={handleDecrement}
+            style={{ backgroundColor: "#ba8fff" }}
+          >
             -
           </Button>
         </Button.Group>
