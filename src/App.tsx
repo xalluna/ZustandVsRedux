@@ -1,11 +1,11 @@
 import {
+  MantineTheme,
   AppShell,
   Button,
   Container,
   Flex,
   Header,
   Input,
-  MantineTheme,
   Paper,
   Title,
 } from "@mantine/core";
@@ -66,7 +66,7 @@ const ZustandCounter = () => {
 
         <Input
           type="number"
-          onChange={(e) => setCustomValue(e.target.valueAsNumber)}
+          onChange={(e: any) => setCustomValue(e.target.valueAsNumber)}
         />
 
         <Button.Group>
@@ -116,13 +116,13 @@ const ReduxCounter = () => {
         />
 
         <Button.Group>
-          <Button color="teal" onClick={handleIncrement}>
+          <Button color="#ba8fff" onClick={handleIncrement}>
             +
           </Button>
           <Button variant="default" onClick={handleIncrementByuCustomValue}>
             count with custom value
           </Button>
-          <Button color="teal" onClick={handleDecrement}>
+          <Button color="#ba8fff" onClick={handleDecrement}>
             -
           </Button>
         </Button.Group>
