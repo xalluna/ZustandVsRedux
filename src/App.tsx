@@ -17,6 +17,7 @@ import {
 } from "./redux-stores/redux-store";
 import { useCallback, useState } from "react";
 import { useCounterDispatch, useCounterSelector } from "./redux-stores";
+import { AppRoutes, routes } from "./routes/routes";
 
 const App = () => {
   const styles = (theme: MantineTheme) => ({
@@ -31,10 +32,7 @@ const App = () => {
   return (
     <AppShell padding="md" header={<AppHeader />} styles={styles}>
       <Container>
-        <Flex justify={"space-evenly"}>
-          <ZustandCounter />
-          <ReduxCounter />
-        </Flex>
+        <AppRoutes />
       </Container>
     </AppShell>
   );
@@ -46,9 +44,30 @@ const AppHeader = () => {
 
   return (
     <Header height={60} p="xs">
-      <Paper>zustand count: {zustandCount}</Paper>
-      <Paper>redux count: {reduxCounter}</Paper>
+      <Flex justify="space-between">
+        <>
+          <Paper>zustand count: {zustandCount}</Paper>
+          <Paper>redux count: {reduxCounter}</Paper>
+        </>
+        <Button component="a" href={routes.vendors.create}>
+          Create Vendor
+        </Button>
+        <Button component="a" href={routes.codePlayground}>
+          Code
+        </Button>
+      </Flex>
     </Header>
+  );
+};
+
+export const Dashboard = () => {
+  return (
+    <>
+      <Flex justify={"space-evenly"}>
+        <ZustandCounter />
+        <ReduxCounter />
+      </Flex>
+    </>
   );
 };
 
